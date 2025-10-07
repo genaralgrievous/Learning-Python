@@ -27,3 +27,13 @@ else:
 # elif ve else lerden sonra indention birakilmaz ayrica elif ve if 'in aksine else kullanirken kosulu dongunun
 #ilk satirina degil altina yazilir
 
+my_superhero = input("My superhero is  ")
+#Kullanica ile donut almak icin "input "fonksiyonu kullanilabilir
+my_superhero_list = ["batman","iron man","hulk","superman"]
+
+if my_superhero in my_superhero_list:
+    print(":)")
+else:
+    print(":(")
+
+
