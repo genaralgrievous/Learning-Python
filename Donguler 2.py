@@ -42,3 +42,16 @@ for number in my_list2:
 
 for num in my_list2:
     pass
+
+### while
+x = 0
+while x<10:
+    print("x is smaller than 10")
+    x = x+1 # veya x += 1 seklinde'de yazilabilir
+
+#Formatted string
+name = "can"
+print(f"my name is {name}")
+
+print("welcome",name)
+# Gosterilen sekilde print in icine istedigimiz degiskenleri yazabiliriz.

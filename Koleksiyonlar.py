@@ -15,3 +15,8 @@ my_dictionary.keys()
 my_dictionary.values()
 #Sozluklerde karsilikli anahtar deger iliskisi vardir.
 #anahtarlari vaya degerleri ayri ayri getirebilirsin
+
+list3= [40,50,60,70,80.,90]
+list3.pop()
+#pop() fonksiyonu listenin son elemanini listeden cikarmaya yariyor
+print(list3)
