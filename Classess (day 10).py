@@ -109,6 +109,115 @@ iphone's price is 500
 #self.__price=price bu formati kullanarak (iki alt cizgi ile) parametreleri sadece sinifin icinden degistirebilir hale
 #getirebiliriz.Eger degistirmek istersek changeprize methodu kullanilarak degistirilebilir.
 
+###ABSTRACTION(SOYUTLAMA)
+#Abstraction bir kalip olarak kullanilan siniflardir.
+
+from abc import  ABC , abstractmethod
+
+class Car (ABC):
+
+    @abstractmethod
+    def maxSpeed(self):
+        pass
+
+
+class Tesla (Car):
+
+    def maxSpeed(self):
+        print(200)
+
+
+
+class Mercedes (Car):
+
+    def maxSpeed(self):
+        print(300)
+
+myTesla = Tesla()
+myMercedes = Mercedes()
+
+print(myMercedes.maxSpeed())
+print(myTesla.maxSpeed())
+
+'''
+300
+200
+'''
+#Abstract sinif kullanmak icin 'from abc import  ABC , abstractmethod' satirini importlamamiz lazim ikinci olarak
+#Abstract edecegimiz sinifin icine ABC'yi methodunu inherit ederiz. class Car (ABC):
+# Method yazarken de su yapiya dikkat etmeliyiz.
+'''
+@abstractmethod
+    def maxSpeed(self):
+'''
+
+#Son olarak diger siniflari olustururken (Tesla , Mercedes ) kalip olarak olusturdugumuz sinifin icindeki methodlari
+# bulundurmak zorunda (maxSpeed) yoksa hata verir.
+
+
+
+###Special Methods
+
+class Fruit():
+
+    def __init__(self, name, calories):
+        self.name = name
+        self.calories = calories
+
+    def __str__(self):
+        return f"{self.name}: {self.calories} calories"
+
+    def __len__(self):
+        return self.calories
+
+
+#Istersek bir sinifin icerisine __as__ ile ozel bir method yazabiliriz ancak bunun icin bu ozel methodlarin ismini bilmek
+#gerekiyor.
+#Bir nevi init gibi sinif cagrildiginda bazi ozel fonksiyonlar cagiriyoruz.
+
+myFruit = Fruit("banana", 150)
+myFruit.calories
+'''150'''
+
+myFruit.name
+'banana'
+
+print(myFruit)
+
+'''banana: 150
+calories'''
+
+myList = [10, 20, 30]
+len(myList)
+3
+len(myFruit)
+150
+
+
+class Train():
+
+    def __init__(self, name):
+        self.name = name
+
+    def __getitem__(self, key):
+        if key == "a":
+            return self.name
+        else:
+            return "Not found"
+
+
+myTrain = Train("myTrain")
+myTrain["a"]
+'myTrain'
+myTrain["b"]
+'Not found'
+
+
+
+
+
+
+
 
 
 
